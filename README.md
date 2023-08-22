@@ -1,7 +1,6 @@
 # Theater Search Engine Fullstack App - Website with login panel for users and admins.
 
-## Tehcnologies: FE: Thymeleaf+HTML+Bootstrap | BE: SpringBoot: Maven, MVC Design Pattern, Security, Data JPA, MySQL, Lombok,
-## DTO, Converter, Web, API, DB Relationships.
+## Tehcnologies: FE: Thymeleaf+HTML+Bootstrap | BE: SpringBoot: Maven, MVC Design Pattern, Security, Data JPA, MySQL, Lombok, DTO, Converter, Web, API, DB Relationships.
 
 ## Images:
 
