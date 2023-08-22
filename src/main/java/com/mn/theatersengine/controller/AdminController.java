@@ -87,12 +87,6 @@ public class AdminController {
     @PostMapping("/createCity")
     public String addCityAction(@ModelAttribute CityDTO city, HttpSession session){
 
-        boolean f = cityService.checkCity(city.getCountry(), city.getRegion());
-
-        if(f){
-            session.setAttribute("msg", "City already exists!");
-        }else{
-
             CityDTO cityDTO = cityService.saveCity(city);
 
             if(cityDTO != null){
@@ -100,7 +94,7 @@ public class AdminController {
             }else{
                 session.setAttribute("msg", "Something wrong on server, try again later!");
             }
-        }
+
         return "redirect:/admin/listCities";
     }
 
