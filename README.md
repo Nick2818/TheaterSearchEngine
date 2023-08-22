@@ -1,11 +1,9 @@
-# TheaterSearchEngine Fullstack App
+# Theater Search Engine Fullstack App - Website with login panel for users and admins.
 
-## Website with login panel for users and admins.
-
-## Thymeleaf+HTML+Bootstrap | SpringBoot: Maven, MVC Design Pattern, Security, Data JPA, MySQL, Lombok,
+## Tehcnologies: FE: Thymeleaf+HTML+Bootstrap | BE: SpringBoot: Maven, MVC Design Pattern, Security, Data JPA, MySQL, Lombok,
 DTO, Converter, Web, API, DB Relationships.
 
-## Images
+## Images:
 
 ### Index Page
 ![index](https://github.com/Nick2818/TheaterSearchEngine/blob/main/images/index.png)
