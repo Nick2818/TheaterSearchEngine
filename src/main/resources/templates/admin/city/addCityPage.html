@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="adminBase::layout(~{::section})">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>TSE - CITIES</title>
+</head>
+<body>
+
+<section>
+
+    <div class="container p-3">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-header text-center fs-4">Add City</div>
+                        <div class="card-body">
+                            <form action="createCity" method="post">
+                                <div class="mb-3">
+                                    <label>Name:</label> <input type="text"
+                                                                     name="name" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label>Country:</label> <input type="text" name="country"
+                                                                 class="form-control">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label>Region:</label> <input type="text"
+                                                                    name="region" class="form-control">
+                                </div>
+                                <button class="btn btn-danger col-md-12">ADD</button>
+                            </form>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

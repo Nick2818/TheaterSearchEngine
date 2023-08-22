@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="base::layout(~{::section})">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>TSE - ACTORS</title>
+</head>
+<body>
+
+<section>
+
+    <div class="container"><
+
+        <div class="text-white text-center">
+
+            <br/><h1>Actors Table</h1> <br/>
+
+            <table class="table text-white">
+                <thead>
+                <tr>
+                    <!--                        <th scope="col">#</th>-->
+                    <th scope="col">Actor Name</th>
+                    <th scope="col">Surname</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Age</th>
+                </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                <tr th:each="a: ${actors}">
+                    <!--                        <td th:text="${c.id}"></td>-->
+                    <td th:text="${a.name}"></td>
+                    <td th:text="${a.surname}"></td>
+                    <td th:text="${a.gender}"></td>
+                    <td th:text="${a.age}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</section>
+
+</body>
+</html>

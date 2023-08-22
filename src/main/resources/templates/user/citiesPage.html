@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="base::layout(~{::section})">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>TSE - CITIES</title>
+</head>
+    <body>
+
+    <section>
+
+        <div class="container">
+
+            <div class="text-white text-center">
+
+                <br/><h1>Cities Table</h1> <br/>
+
+                <table class="table text-white">
+                    <thead>
+                    <tr>
+<!--                        <th scope="col">#</th>-->
+                        <th scope="col">City Name</th>
+                        <th scope="col">Country</th>
+                        <th scope="col">Region</th>
+                    </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                    <tr th:each="c: ${cities}">
+<!--                        <td th:text="${c.id}"></td>-->
+                        <td th:text="${c.name}"></td>
+                        <td th:text="${c.country}"></td>
+                        <td th:text="${c.region}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </section>
+
+    </body>
+</html>

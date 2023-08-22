@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="adminBase::layout(~{::section})">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>TSE - CITIES</title>
+</head>
+<body>
+
+<section>
+
+    <div class="container p-3">
+        <div class="row">
+
+            <div class="col">
+                <div class="row text-center text-white my-5">
+                    <h3>Select Id Theater from below:</h3>
+                </div>
+
+                <div class="row">
+
+                    <table class="table text-white">
+                        <thead>
+                        <tr>
+                            <th class="text-danger" scope="col">#</th>
+                            <th scope="col">Theater Name</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+
+                        <tr th:each="t: ${theaters}">
+                            <td class="text-danger" th:text="${t.id}"></td>
+                            <td th:text="${t.theaterName}"></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+            <div class="col"></div>
+
+            <div class="col">
+                <div class="card my-5">
+                    <div class="card-header text-center fs-4">Add Actor</div>
+                    <div class="card-body">
+                        <form action="createActor" method="post">
+                            <div class="mb-3">
+                                <label>Name:</label> <input type="text"
+                                                            name="name" class="form-control">
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Surname:</label> <input type="text"
+                                                            name="surname" class="form-control">
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Gender:</label> <input type="text"
+                                                            name="gender" class="form-control">
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Age:</label> <input type="text"
+                                                            name="age" class="form-control">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="text-danger">Id Theater:</label> <input type="text" name="theaterId"
+                                                                                   class="form-control">
+                            </div>
+
+                            <button class="btn btn-danger col-md-12">ADD</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+</section>
+
+</body>
+</html>

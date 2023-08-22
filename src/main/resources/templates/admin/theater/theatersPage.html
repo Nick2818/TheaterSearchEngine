@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="adminBase::layout(~{::section})">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>TSE - CITIES</title>
+</head>
+<body>
+
+<section>
+
+    <div class="container">
+
+        <div class="text-white text-center">
+
+            <a class="btn btn-primary my-5" href="addTheater" role="button">ADD Theater</a>
+
+            <th:block th:if="${session.msg}">
+                <div class="alert alert-info fw-bold fs-4" role="alert">
+                    [[${session.msg}]]
+                </div>
+                <th:block th:text="${#session.removeAttribute('msg')}"></th:block>
+            </th:block>
+
+            <h1 class="my-5">Theaters Table</h1>
+
+            <table class="table text-white">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Theater Name</th>
+                    <th scope="col">Id City</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody class="table-group-divider">
+
+                <tr th:each="t: ${theaters}">
+                    <td th:text="${t.id}"></td>
+                    <td th:text="${t.theaterName}"></td>
+                    <td th:text="${t.city.id}"></td>
+                    <td><a th:href="@{/admin/updateTheater/{id}(id=${t.id})}" class="btn btn-warning">UPDATE</a></td>
+                    <td><a th:href="@{/admin/deleteTheater/{id}(id=${t.id})}" class="btn btn-danger">DELETE</a></td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</section>
+
+</body>
+</html>

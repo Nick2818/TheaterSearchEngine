@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="adminBase::layout(~{::section})">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>TSE - CITIES</title>
+</head>
+<body>
+
+<section>
+
+    <div class="container p-3">
+
+        <div class="row">
+
+            <div class="col">
+                <div class="row text-center text-white my-5">
+                    <h3>Select Id City from below:</h3>
+                </div>
+
+                <div class="row">
+
+                    <table class="table text-white">
+                        <thead>
+                        <tr>
+                            <th class="text-danger" scope="col">#</th>
+                            <th scope="col">City Name</th>
+                            <th scope="col">Country</th>
+                            <th scope="col">Region</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+
+                        <tr th:each="c: ${cities}">
+                            <td class="text-danger" th:text="${c.id}"></td>
+                            <td th:text="${c.name}"></td>
+                            <td th:text="${c.country}"></td>
+                            <td th:text="${c.region}"></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+            <div class="col"></div>
+
+            <div class="col">
+                    <div class="card my-5">
+                        <div class="card-header text-center fs-4">Update City</div>
+                        <div class="card-body">
+                            <form action="#" th:action="@{/admin/updateTheaterAction}" th:method="post" th:object="${theater}">
+
+                                <div class="mb-3">
+
+                                    <input type="hidden" th:field="${theater.id}">
+
+                                    <label>Name:</label> <input type="text"
+                                                                name="theaterName" class="form-control" th:field="${theater.theaterName}">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="text-danger">Id City:</label> <input type="text" name="cityId"
+                                                                   class="form-control" th:field="${theater.city.id}">
+                                </div>
+
+                                <button class="btn btn-danger col-md-12">UPDATE</button>
+
+                            </form>
+                        </div>
+                    </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+</body>
+</html>

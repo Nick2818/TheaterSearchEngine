@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="base::layout(~{::section})">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>TSE - THEATERS</title>
+</head>
+    <body>
+
+    <section>
+
+        <div class="container"><
+
+            <div class="text-white text-center">
+                <br/><h1>Theaters Table</h1> <br/>
+
+            </div>
+
+
+            <div class="text-white">
+                <table class="table text-white">
+                    <thead>
+                    <tr>
+<!--                        <th scope="col">#</th>-->
+                        <th scope="col">Theater Name</th>
+                    </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                    <tr th:each="t: ${theaters}">
+<!--                        <td th:text="${t.id}"></td>-->
+                        <td th:text="${t.theaterName}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </section>
+
+    </body>
+</html>

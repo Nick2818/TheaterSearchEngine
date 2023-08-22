@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="base::layout(~{::section})">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>TSE - ACTORS</title>
+</head>
+<body>
+
+<section>
+
+    <div class="container"><
+
+        <div class="text-white text-center">
+
+            <br/><h1>Search result</h1>
+            <br/>
+
+
+        </div>
+
+            <table class="table text-white">
+                <thead>
+                <tr>
+                    <th scope="col">Actor Name</th>
+                    <th scope="col">Surname</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Age</th>
+                    <th scope="col"></th>
+                    <th scope="col">Theater Name</th>
+                    <th scope="col"></th>
+                    <th scope="col">City Name</th>
+                    <th scope="col">Region</th>
+                    <th scope="col">Country</th>
+                </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr th:each="result : ${searchResults}">
+                        <td th:text="${result[0].name}"></td>
+                        <td th:text="${result[0].surname}"></td>
+                        <td th:text="${result[0].gender}"></td>
+                        <td th:text="${result[0].age}"></td>
+                        <td>plays at</td>
+                        <td th:text="${result[1].theaterName}"></td>
+                        <td>in city</td>
+                        <td th:text="${result[2].name}"></td>
+                        <td th:text="${result[2].region}"></td>
+                        <td th:text="${result[2].country}"></td>
+                    </tr>
+                </tbody>
+            </table>
+    </div>
+
+</section>
+
+</body>
+</html>

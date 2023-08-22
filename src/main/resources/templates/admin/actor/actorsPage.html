@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="adminBase::layout(~{::section})">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>TSE - CITIES</title>
+</head>
+<body>
+
+<section>
+
+    <div class="container">
+
+        <div class="text-white text-center">
+
+            <a class="btn btn-primary my-5" href="addActor" role="button">ADD Actor</a>
+
+            <th:block th:if="${session.msg}">
+                <div class="alert alert-info fw-bold fs-4" role="alert">
+                    [[${session.msg}]]
+                </div>
+                <th:block th:text="${#session.removeAttribute('msg')}"></th:block>
+            </th:block>
+
+            <h1 class="my-5">Actors Table</h1>
+
+            <table class="table text-white">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Actor Name</th>
+                    <th scope="col">Actor Surname</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Id Theater</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody class="table-group-divider">
+
+                <tr th:each="a: ${actors}">
+                    <td th:text="${a.id}"></td>
+                    <td th:text="${a.name}"></td>
+                    <td th:text="${a.surname}"></td>
+                    <td th:text="${a.gender}"></td>
+                    <td th:text="${a.age}"></td>
+                    <td th:text="${a.theater.id}"></td>
+                    <td><a th:href="@{/admin/updateActor/{id}(id=${a.id})}" class="btn btn-warning">UPDATE</a></td>
+                    <td><a th:href="@{/admin/deleteActor/{id}(id=${a.id})}" class="btn btn-danger">DELETE</a></td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</section>
+
+</body>
+</html>
