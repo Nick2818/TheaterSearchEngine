@@ -1,4 +1,9 @@
-# TheaterSearchEngine
+# TheaterSearchEngine Fullstack App
+
+## Website with login panel for users and admins.
+
+## Thymeleaf+HTML+Bootstrap | SpringBoot: Maven, MVC Design Pattern, Security, Data JPA, MySQL, Lombok,
+DTO, Converter, Web, API, DB Relationships.
 
 ## Images
 
