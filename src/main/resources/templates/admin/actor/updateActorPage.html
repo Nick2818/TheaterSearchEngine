@@ -70,16 +70,18 @@
 
                             <div class="mb-3">
 
-                                <label>Age:</label> <input type="text"
+                                <label>Age:</label> <input type="number"
                                                                name="age" class="form-control" th:field="${actor.age}">
                             </div>
 
                             <div class="mb-3">
-                                <label class="text-danger">Id Theater:</label> <input type="text" name="theaterId"
+                                <label class="text-danger">Id Theater:</label> <input type="number" name="theaterId"
                                                                                    class="form-control" th:field="${actor.theater.id}">
                             </div>
 
-                            <button class="btn btn-danger col-md-12">UPDATE</button>
+                            <button class="btn btn-danger col-md-12 mb-1">UPDATE</button>
+                            <button class="btn btn-danger col-md-12 mb-1" type="reset">RESET</button>
+                            <button class="btn btn-secondary col-md-12" onclick="goBack()">Go Back</button>
 
                         </form>
                     </div>
@@ -93,6 +95,12 @@
 
 
 </section>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
 
 </body>
 </html>

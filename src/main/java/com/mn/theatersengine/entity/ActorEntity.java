@@ -1,8 +1,12 @@
 package com.mn.theatersengine.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.Digits;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 
 @Entity

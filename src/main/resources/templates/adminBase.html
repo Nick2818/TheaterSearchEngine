@@ -93,11 +93,23 @@
 
     if (currentUrl.includes("/admin/home")) {
         document.getElementById("homeLink").classList.add("active");
-    } else if (currentUrl.includes("/admin/listCities")) {
+    }else if (currentUrl.includes("/admin/listCities")) {
+        document.getElementById("citiesLink").classList.add("active");
+    }else if (currentUrl.includes("/admin/updateCity")) {
+        document.getElementById("citiesLink").classList.add("active");
+    }else if (currentUrl.includes("/admin/addCity")) {
         document.getElementById("citiesLink").classList.add("active");
     }else if (currentUrl.includes("/admin/listTheaters")) {
         document.getElementById("theatersLink").classList.add("active");
+    }else if (currentUrl.includes("/admin/updateTheater")) {
+        document.getElementById("theatersLink").classList.add("active");
+    }else if (currentUrl.includes("/admin/addTheater")) {
+        document.getElementById("theatersLink").classList.add("active");
     }else if (currentUrl.includes("/admin/listActors")) {
+        document.getElementById("actorsLink").classList.add("active");
+    }else if (currentUrl.includes("/admin/updateActor")) {
+        document.getElementById("actorsLink").classList.add("active");
+    }else if (currentUrl.includes("/admin/addActor")) {
         document.getElementById("actorsLink").classList.add("active");
     }
 </script>

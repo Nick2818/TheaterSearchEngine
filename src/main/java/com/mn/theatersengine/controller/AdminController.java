@@ -20,6 +20,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpSession;
 import java.security.Principal;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -100,6 +101,22 @@ public class AdminController {
 
     @GetMapping("/deleteCity/{id}")
     public String deleteCity(@PathVariable(value = "id") Long id, HttpSession session){
+
+        Optional<CityEntity> cityEntity = cityRepository.findById(id);
+        if(cityEntity.isPresent()){
+
+            List<TheaterEntity> theaterEntityList = (List<TheaterEntity>) theaterRepository.findAll();
+
+            for(TheaterEntity te: theaterEntityList){
+                if(cityEntity.get().getId() == te.getCity().getId()){
+                    session.setAttribute("msg", "This city is linked to a theater! Please, first delete theater linked to this city!(Theater id: " + te.getId() + ")");
+                    return "redirect:/admin/listCities";
+                }
+            }
+
+        }
+
+
         cityRepository.deleteById(id);
         session.setAttribute("msg", "City deleted successfully!");
         return "redirect:/admin/listCities";
@@ -180,6 +197,22 @@ public class AdminController {
 
     @GetMapping("/deleteTheater/{id}")
     public String deleteTheater(@PathVariable(value = "id") Long id, HttpSession session){
+
+        Optional<TheaterEntity> theaterEntity = theaterRepository.findById(id);
+
+        if(theaterEntity.isPresent()){
+
+            List<ActorEntity> actorEntityList = (List<ActorEntity>) actorRepository.findAll();
+
+            for(ActorEntity ae: actorEntityList){
+                if(theaterEntity.get().getId() == ae.getTheater().getId()){
+                    session.setAttribute("msg", "Theater is linked to an actor! Please, first delete the actor linked to this theater!(Actor id: " + ae.getId() + ")");
+                    return "redirect:/admin/listTheaters";
+                }
+            }
+
+        }
+
         theaterRepository.deleteById(id);
         session.setAttribute("msg", "Theater deleted successfully!");
         return "redirect:/admin/listTheaters";
